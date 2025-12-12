@@ -4,7 +4,7 @@ using namespace std;
 
 int main(){
     Vector3 A,B,R;
-    int opcion;
+    char opcion;
     cout << "=== OPERACIONES CON VECTORES 3D ===\n\n";
     cout << "Ingrese el primer vector (x y z): ";
     cin>>A;
@@ -18,11 +18,11 @@ int main(){
         cout << "2. Producto Cruz (A ^ B)\n";
         cout << "3. Volver a ingresar nuevos vectores\n";
         cout << "0. Salir\n";
-        cin >> opcion;
-
+        
+        cin>>opcion;
         switch(opcion){
 
-            case 1:
+            case '1':
                 system("cls");
                 cout<<"\n--- MULTIPLICACION COMPONENTE A COMPONENTE ---\n";
                 cout<<"\tA = "<<A.x<<"i + "<<A.y<<"j + "<<A.z<<"k\n";
@@ -37,7 +37,8 @@ int main(){
                 sleep(1);
                 break;
 
-            case 2:
+            case '2':
+                system("cls");
                 cout<< "\n--- PRODUCTO CRUZ ---\n";
                 cout<<"\tA = "<<A.x<<"i + "<<A.y<<"j + "<<A.z<<"k\n";
                 cout<<"\tB = "<<B.x<<"i + "<<B.y<<"j + "<<B.z<<"k\n";
@@ -58,7 +59,8 @@ int main(){
                 sleep(1);
                 break;
 
-            case 3:
+            case '3':
+                system("cls");
                 cout << "\nReingresar valores:\n";
                 cout << "\tIngrese el vector A (x y z): ";
                 cin >> A;
@@ -66,12 +68,14 @@ int main(){
                 cin >> B;
                 break;
 
-            case 0:
+            case '0':
                 cout << "Saliendo...\n";
+                sleep(2);
                 break;
 
             default:
                 cout << "Opcion invalida.\n";
+                sleep(1);
                 break;
         }
 
