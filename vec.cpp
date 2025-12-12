@@ -13,65 +13,56 @@ int main(){
     cin>>B;
     do {
         cout << "\n===== MENU =====\n";
-        cout << "1. Suma (A + B)\n";
-        cout << "2. Multiplicacion componente a componente (A * B)\n";
-        cout << "3. Producto Cruz (A ^ B)\n";
-        cout << "4. Volver a ingresar nuevos vectores\n";
+        cout << "Elige una opcion: \n";
+        cout << "1. Multiplicacion componente a componente (A * B)\n";
+        cout << "2. Producto Cruz (A ^ B)\n";
+        cout << "3. Volver a ingresar nuevos vectores\n";
         cout << "0. Salir\n";
-        cout << "Elige una opcion: ";
         cin >> opcion;
 
         switch(opcion){
+
             case 1:
-                cout<<"\n--- SUMA DE VECTORES ---\n";
-                cout<<"A = "<<A.x<<"i + "<<A.y<<"j + "<<A.z<<"k\n";
-                cout<<"B = "<<B.x<<"i + "<<B.y<<"j + "<<B.z<<"k\n";
-
-                cout<<"Formula:\n";
-                cout<<"(A.x + B.x)i + (A.y + B.y)j + (A.z + B.z)k\n";
-
-                R=A + B;
-
-                cout<<"Resultado = "<<R.x<<"i + "<<R.y<<"j + "<<R.z<<"k\n"<<" = "<< "("<<R.x<<","<<R.y<<","<<R.z<<")";
+                system("cls");
+                cout<<"\n--- MULTIPLICACION COMPONENTE A COMPONENTE ---\n";
+                cout<<"\tA = "<<A.x<<"i + "<<A.y<<"j + "<<A.z<<"k\n";
+                cout<<"\tB = "<<B.x<<"i + "<<B.y<<"j + "<<B.z<<"k\n\n";
+                sleep(1);
+                cout<<"\tFormula:\n";
+                cout<<"\t(A.x * B.x)i + (A.y * B.y)j + (A.z * B.z)k\n";
+                
+                R=A * B;
+                sleep(1);
+                cout<<"\tResultado = "<<R.x<<"i + "<<R.y<<"j + "<<R.z<<"k\n"<<" = "<< "\t("<<R.x<<","<<R.y<<","<<R.z<<")";
+                sleep(1);
                 break;
 
             case 2:
-                cout<<"\n--- MULTIPLICACION COMPONENTE A COMPONENTE ---\n";
-                cout<<"A = "<<A.x<<"i + "<<A.y<<"j + "<<A.z<<"k\n";
-                cout<<"B = "<<B.x<<"i + "<<B.y<<"j + "<<B.z<<"k\n";
-
-                cout<<"Formula:\n";
-                cout<<"(A.x * B.x)i + (A.y * B.y)j + (A.z * B.z)k\n";
-
-                R=A * B;
-
-                cout<<"Resultado = "<<R.x<<"i + "<<R.y<<"j + "<<R.z<<"k\n"<<" = "<< "("<<R.x<<","<<R.y<<","<<R.z<<")";
+                cout<< "\n--- PRODUCTO CRUZ ---\n";
+                cout<<"\tA = "<<A.x<<"i + "<<A.y<<"j + "<<A.z<<"k\n";
+                cout<<"\tB = "<<B.x<<"i + "<<B.y<<"j + "<<B.z<<"k\n";
+                sleep(1);
+                cout<<"\t\nFormula del producto cruz:\n";
+                cout<<"\tu x v = (b1*c2 - c1*b2)i + (c1*a2 - a1*c2)j + (a1*b2 - b1*a2)k\n";
+                sleep(1);
+                cout<<"\t\nSustituyendo:\n";
+                cout<<"\t("<<A.y<<"*"<<B.z<<" - "<<A.z<<"*"<<B.y<<")i + ";
+                cout<<"\t("<<A.z<<"*"<<B.x<<" - "<<A.x<<"*"<<B.z<< ")j + ";
+                cout<<"\t("<<A.x<<"*"<<B.y<<" - "<<A.y<<"*"<<B.x<<")k\n";
+                
+                R=A ^ B;
+                sleep(1);
+                cout<<"\t\nResultado = "<<R.x<<"i + "<<R.y<<"j + "<<R.z<< "k\n"<<" = "<< "("<<R.x<<","<<R.y<<","<<R.z<<")";
+                sleep(1);
+                dibujito(A,B,R);
+                sleep(1);
                 break;
 
             case 3:
-                cout<< "\n--- PRODUCTO CRUZ ---\n";
-                cout<<"A = "<<A.x<<"i + "<<A.y<<"j + "<<A.z<<"k\n";
-                cout<<"B = "<<B.x<<"i + "<<B.y<<"j + "<<B.z<<"k\n";
-
-                cout<<"\nFormula del producto cruz:\n";
-                cout<<"u x v = (b1*c2 - c1*b2)i + (c1*a2 - a1*c2)j + (a1*b2 - b1*a2)k\n";
-
-                cout<<"\nSustituyendo:\n";
-                cout<<"("<<A.y<<"*"<<B.z<<" - "<<A.z<<"*"<<B.y<<")i + ";
-                cout<<"("<<A.z<<"*"<<B.x<<" - "<<A.x<<"*"<<B.z<< ")j + ";
-                cout<<"("<<A.x<<"*"<<B.y<<" - "<<A.y<<"*"<<B.x<<")k\n";
-
-                R=A ^ B;
-
-                cout<<"\nResultado = "<<R.x<<"i + "<<R.y<<"j + "<<R.z<< "k\n"<<" = "<< "("<<R.x<<","<<R.y<<","<<R.z<<")";
-                dibujito();
-                break;
-
-            case 4:
                 cout << "\nReingresar valores:\n";
-                cout << "Ingrese el vector A (x y z): ";
+                cout << "\tIngrese el vector A (x y z): ";
                 cin >> A;
-                cout << "Ingrese el vector B (x y z): ";
+                cout << "\tIngrese el vector B (x y z): ";
                 cin >> B;
                 break;
 
