@@ -3,9 +3,15 @@
 using namespace std;
 
 int main(){
-   Vector3 A,B;
+    system("cls");
+
+    Vector3 A,B;
+
+    cout<<"Ingrese A (x y z): ";
     cin>>A;
+    cout<<"Ingrese B (x y z): ";
     cin>>B;
-    cout<<(A^B)<<endl;
+
+    imprimicion(A, B);
     return 0;
 }
